@@ -1,9 +1,9 @@
 # EZCompile Library
 > Usefull Library With Simplified compilation methods
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+[![Active](http://img.shields.io/badge/Status-Active-green.svg)](https://tterb.github.io)
+
 
 Easily compile your C# code 
 
