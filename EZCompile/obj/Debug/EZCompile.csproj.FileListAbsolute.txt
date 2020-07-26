@@ -1,0 +1,6 @@
+C:\Users\Danny\Documents\EZCompile\EZCompile\EZCompile\bin\Debug\EZCompile.dll
+C:\Users\Danny\Documents\EZCompile\EZCompile\EZCompile\bin\Debug\EZCompile.pdb
+C:\Users\Danny\Documents\EZCompile\EZCompile\EZCompile\obj\Debug\EZCompile.csprojAssemblyReference.cache
+C:\Users\Danny\Documents\EZCompile\EZCompile\EZCompile\obj\Debug\EZCompile.csproj.CoreCompileInputs.cache
+C:\Users\Danny\Documents\EZCompile\EZCompile\EZCompile\obj\Debug\EZCompile.dll
+C:\Users\Danny\Documents\EZCompile\EZCompile\EZCompile\obj\Debug\EZCompile.pdb
