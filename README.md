@@ -15,7 +15,7 @@ Download the current release and add it to your project
 ```
 
 ## Usage example
-Compile C# Code
+Compile CSharp Code (C#)
 ````cs
 Compiler compiler = new Compiler();
 compiler.Code = File.ReadAllText("test.cs");
