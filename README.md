@@ -43,7 +43,7 @@ else
 
 Compile VisualBasic Code (VB)
 
-````vb
+````cs
 Compiler compiler = new Compiler();
 compiler.Code = File.ReadAllText("test.vb");
 compiler.OutputName = "bite.exe";
