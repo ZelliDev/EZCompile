@@ -70,7 +70,9 @@ else
 ````
 
 ## Release History
-
+* 0.0.2
+    * Added Visual Basic (VB) In Compilation
+    * Renamed Somes Methods due to VB implant
 * 0.0.1
     * First Upload Of EZCompile
 
