@@ -4,6 +4,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
+using Microsoft.VisualBasic;
 
 namespace EZCompile
 {
@@ -53,7 +54,8 @@ namespace EZCompile
         /// Compile and return the assembly. RunFromMemory() will run the compiled assembly
         /// </summary>
         /// <returns></returns>
-        public CompileResult CompileAndRun()
+        
+        public CompileResult CompileAndRunCsharp()
         {
             CSharpCodeProvider codeProvider = new CSharpCodeProvider();
             ICodeCompiler icc = codeProvider.CreateCompiler();
@@ -90,7 +92,37 @@ namespace EZCompile
             }
 
         }
-        public CompileResult CompileFromCode()
+
+        public CompileResult CompileFromVBCode()
+        {
+            VBCodeProvider codeProvider = new VBCodeProvider();
+            ICodeCompiler icc = codeProvider.CreateCompiler();
+            System.CodeDom.Compiler.CompilerParameters parameters = new CompilerParameters();
+            foreach (var item in CustomReferences)
+            {
+                parameters.ReferencedAssemblies.Add(item.ToString());
+            }
+            parameters.GenerateExecutable = true;
+            parameters.GenerateInMemory = false;
+            parameters.OutputAssembly = OutputName;
+            CompilerResults results = icc.CompileAssemblyFromSource(parameters,Code);
+            if (results.Errors.Count > 0)
+            {
+                //Console.WriteLine("");
+                CompileResult res = new CompileResult();
+                res.IsSuccess = false;
+                return res;
+            }
+            else
+            {
+                CompileResult res = new CompileResult();
+                res.IsSuccess = true;
+                return res;
+            }
+
+        }
+
+        public CompileResult CompileFromCSharpCode()
         {
             CSharpCodeProvider codeProvider = new CSharpCodeProvider();
             ICodeCompiler icc = codeProvider.CreateCompiler();
