@@ -15,27 +15,58 @@ Download the current release and add it to your project
 ```
 
 ## Usage example
-
+Compile C# Code
 ````cs
 Compiler compiler = new Compiler();
- compiler.Code = File.ReadAllText("test.cs");
- compiler.OutputName = "bite.exe";
- compiler.OutputType = OutputType.Output.exe;
- compiler.CustomReferences.Add("System.dll");
- //compiler.CustomReferences.Add("System.IO.dll");
- CompileResult result = compiler.CompileFromCode();
- if (result.IsSuccess)
- {
-                
- 	Console.WriteLine("success");
-  }
-  else
-  {
-        Console.WriteLine("failed");
-        Console.WriteLine(result.ErrorText);
-        List<string> ErrorList = result.ErrorList;
+compiler.Code = File.ReadAllText("test.cs");
+compiler.OutputName = "bite.exe";
+compiler.OutputType = OutputType.Output.exe;
+compiler.CustomReferences.Add("System.dll");
+CompileResult result = compiler.CompileFromCSharpCode();
+if (result.IsSuccess)
+{    
+     Console.WriteLine("success");
+               
+}
+else
+{
+     Console.WriteLine("failed");
+     Console.WriteLine(result.ErrorText);
+     List<string> ErrorList = result.ErrorList;
+     foreach (var error in ErrorList)
+     {
+         Console.WriteLine(error.ToString());
+     }
               
-  }
+}
+````
+
+Compile VisualBasic Code (VB)
+
+````vb
+Compiler compiler = new Compiler();
+compiler.Code = File.ReadAllText("test.vb");
+compiler.OutputName = "bite.exe";
+compiler.OutputType = OutputType.Output.exe;
+compiler.CustomReferences.Add("System.dll");
+CompileResult result = compiler.CompileFromVBCode();
+if (result.IsSuccess)
+{
+                
+     Console.WriteLine("success");
+               
+}
+else
+{
+     Console.WriteLine("failed");
+     Console.WriteLine(result.ErrorText);
+     List<string> ErrorList = result.ErrorList;
+     foreach (var error in ErrorList)
+     {
+           Console.WriteLine(error.ToString());
+     }
+              
+}
 ````
 
 ## Release History
